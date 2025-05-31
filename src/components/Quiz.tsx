@@ -23,12 +23,21 @@ const Quiz: React.FC = () => {
       answer: "JavaScript XML",
     },
   ];
+
+  function handleSelectionOption(option) {
+    console.log(option);
+  }
   return (
     <div>
       <h2>Question 1</h2>
       <p className="question">{questioBank[0].question}</p>
       {questioBank[0].options.map((option) => (
-        <button className="option">{option}</button>
+        <button
+          className="option"
+          onClick={() => handleSelectionOption(option)}
+        >
+          {option}
+        </button>
       ))}
       <div className="nav-buttons">
         <button> Previous </button>
